@@ -1,17 +1,15 @@
 /*
 The root server layout for the app.
+It now only sets up providers and global structure, authentication checks are moved lower down.
 */
 
-import {
-  createProfileAction,
-  getProfileByUserIdAction
-} from "@/actions/db/profiles-actions"
+// REMOVED: import { auth } from "@clerk/nextjs/server"
+// REMOVED: import { createProfileAction, getProfileByUserIdAction } from "@/actions/db/profiles-actions"
 import { Toaster } from "@/components/ui/toaster"
 import { Providers } from "@/components/utilities/providers"
 import { TailwindIndicator } from "@/components/utilities/tailwind-indicator"
 import { cn } from "@/lib/utils"
 import { ClerkProvider } from "@clerk/nextjs"
-import { auth } from "@clerk/nextjs/server"
 import type { Metadata } from "next"
 import { Inter } from "next/font/google"
 import "./globals.css"
@@ -23,19 +21,21 @@ export const metadata: Metadata = {
   description: "A full-stack web app template."
 }
 
-export default async function RootLayout({
+// REMOVED: async keyword
+export default function RootLayout({
   children
 }: {
   children: React.ReactNode
 }) {
-  const { userId } = await auth()
-
-  if (userId) {
-    const profileRes = await getProfileByUserIdAction(userId)
-    if (!profileRes.isSuccess) {
-      await createProfileAction({ userId })
-    }
-  }
+  // REMOVED: auth() call and profile logic
+  // const { userId } = await auth()
+  // console.log("userId", userId)
+  // if (userId) {
+  //   const profileRes = await getProfileByUserIdAction(userId)
+  //   if (!profileRes.isSuccess) {
+  //     await createProfileAction({ userId })
+  //   }
+  // }
 
   return (
     <ClerkProvider>
