@@ -10,7 +10,6 @@ import { motion } from "framer-motion"
 import { ChevronRight, Rocket } from "lucide-react"
 import Link from "next/link"
 import AnimatedGradientText from "../magicui/animated-gradient-text"
-import HeroVideoDialog from "../magicui/hero-video-dialog"
 
 export const HeroSection = () => {
   return (
@@ -48,7 +47,7 @@ export const HeroSection = () => {
           transition={{ duration: 0.6, delay: 0.4, ease: "easeOut" }}
           className="text-balance text-6xl font-bold"
         >
-          Receipt AI
+          SAAS Boilerplate
         </motion.div>
 
         <motion.div
@@ -57,7 +56,7 @@ export const HeroSection = () => {
           transition={{ duration: 0.6, delay: 0.6, ease: "easeOut" }}
           className="max-w-xl text-balance text-xl"
         >
-          Transform receipts and invoices into organized data instantly with AI.
+          A modern, full-stack web application template for your next project.
         </motion.div>
 
         <motion.div
@@ -78,14 +77,16 @@ export const HeroSection = () => {
         initial={{ opacity: 0, y: 30 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 1, delay: 1, ease: "easeOut" }}
-        className="mx-auto mt-20 flex w-full max-w-screen-lg items-center justify-center rounded-lg border shadow-lg"
+        className="mx-auto mt-20 flex w-full max-w-screen-lg flex-col items-center justify-center gap-8 rounded-lg border p-8 shadow-lg"
       >
-        <HeroVideoDialog
-          animationStyle="top-in-bottom-out"
-          videoSrc="https://www.youtube.com/embed/9yS0dR0kP-s"
-          thumbnailSrc="hero.png"
-          thumbnailAlt="Hero Video"
-        />
+        <h2 className="text-3xl font-bold">
+          Ready to Build Your Next Project?
+        </h2>
+        <p className="text-muted-foreground max-w-2xl text-center text-lg">
+          This boilerplate includes everything you need to get started:
+          authentication, database integration, payment processing, and a
+          beautiful UI.
+        </p>
       </motion.div>
     </div>
   )

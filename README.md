@@ -1,103 +1,86 @@
-# Building Apps with the o1 Pro Template System
+# SAAS Boilerplate
 
-This is the repo for a free workshop on how to use [OpenAI's o1-pro](https://chatgpt.com/) to build full-stack web apps with a [starter template](https://github.com/mckaywrigley/mckays-app-template).
-
-It is part 1 of a 2 part series. This is the beginner workshop. The advanced workshop will be released on February 24th.
-
-## Workshop Video
-
-You can find the video for this workshop on [X](https://x.com/mckaywrigley/status/1891544731496206365) and [YouTube](https://www.youtube.com/watch?v=Y4n_p9w8pGY).
-
-This workshop is also available in course form on [Takeoff](https://www.jointakeoff.com/) - we will continue to add to it and keep it updated with the latest model releases over time.
-
-Use code `O1PRO` for 25% off at checkout.
-
-I get asked all the time for an example of content on Takeoff, so hopefully this workshop gives you a feel for our content and my teaching style.
-
-## About Me
-
-My name is [Mckay](https://www.mckaywrigley.com/).
-
-I'm currently building [Takeoff](https://www.jointakeoff.com/) - the best place on the internet to learn how to build with AI.
-
-Follow me on [X](https://x.com/mckaywrigley) and subscribe to my [YouTube](https://www.youtube.com/channel/UCXZFVVCFahewxr3est7aT7Q) for more free AI coding tutorials & guides.
+A modern, full-stack SAAS web application template to kickstart your next project.
 
 ## Tech Stack
 
-- AI Model: [o1-pro](https://chatgpt.com/)
-- IDE: [Cursor](https://www.cursor.com/)
-- AI Tools: [RepoPrompt](https://repoprompt.com/), [V0](https://v0.dev/), [Perplexity](https://www.perplexity.com/)
-- Frontend: [Next.js](https://nextjs.org/docs), [Tailwind](https://tailwindcss.com/docs/guides/nextjs), [Shadcn](https://ui.shadcn.com/docs/installation), [Framer Motion](https://www.framer.com/motion/introduction/)
-- Backend: [PostgreSQL](https://www.postgresql.org/about/), [Supabase](https://supabase.com/), [Drizzle](https://orm.drizzle.team/docs/get-started-postgresql), [Server Actions](https://nextjs.org/docs/app/building-your-application/data-fetching/server-actions-and-mutations)
-- Auth: [Clerk](https://clerk.com/)
-- Payments: [Stripe](https://stripe.com/)
+- Frontend: [Next.js](https://nextjs.org/docs), [Tailwind](https://tailwindcss.com/docs/guides/nextjs), [Shadcn](https://ui.shadcn.com/docs/installation), [Framer Motion](https://www.framer.com/motion/introduction/)
+- Backend: [PostgreSQL](https://www.postgresql.org/about/), [Drizzle](https://orm.drizzle.team/docs/get-started-postgresql), [Server Actions](https://nextjs.org/docs/app/building-your-application/data-fetching/server-actions-and-mutations)
+- Auth: [Clerk](https://clerk.com/)
+- Payments: [Stripe](https://stripe.com/)
 
-**Note**: While I _highly_ recommend using o1-pro for this workflow, you can also use o3-mini, Claude 3.5 Sonnet, Gemini 2.0 Pro, and DeepSeek r1 for cheaper alternatives. However, you _will_ run into issues with those other models in this particular workflow, so I recommend using o1-pro for this workflow if possible.
+## Features
 
-## Prerequisites
+- 🔐 Authentication & Authorization with Clerk
+- 💳 Payment processing with Stripe
+- 🗃️ Database integration with PostgreSQL and Drizzle ORM
+- 🎨 Beautiful UI components from Shadcn UI
+- 🚀 Server-side rendering with Next.js
+- 📱 Responsive design with Tailwind CSS
+- 🔄 Server actions for data mutations
+- 🌓 Light and dark mode support
 
-You will need accounts for the following services.
+## Getting Started
 
-They all have free plans that you can use to get started, with the exception of ChatGPT Pro (if you are using o1-pro).
+### Prerequisites
 
-- Create a [Cursor](https://www.cursor.com/) account
-- Create a [GitHub](https://github.com/) account
-- Create a [Supabase](https://supabase.com/) account
-- Create a [Clerk](https://clerk.com/) account
-- Create a [Stripe](https://stripe.com/) account
-- Create a [Vercel](https://vercel.com/) account
+You will need accounts for the following services:
 
-You will likely not need paid plans unless you are building a business.
+- [Clerk](https://clerk.com/) for authentication
+- [Supabase](https://supabase.com/) or any PostgreSQL database
+- [Stripe](https://stripe.com/) for payment processing
+- [Vercel](https://vercel.com/) (optional, for deployment)
 
-## Guide
+### Installation
 
-### Clone the repo
-
-1. Clone this repo:
-
-```bash
-git clone https://github.com/mckaywrigley/o1-pro-template-system o1-pro-project
-```
-
-2. Save the original remote as "upstream" before removing it:
+1. Clone this repository
 
 ```bash
-git remote rename origin upstream
+git clone https://github.com/yourusername/saas-boilerplate.git
+cd saas-boilerplate
 ```
 
-3. Create a new repository on GitHub
-
-4. Add the new repository as "origin":
-
-```bash
-git remote add origin https://github.com/your-username/your-repo-name.git
-```
-
-5. Push the new repository:
-
-```
-git branch -M main
-git push -u origin main
-```
-
-### Run the app
-
-1. Install dependencies:
+2. Install dependencies
 
 ```bash
 npm install
 ```
 
-2. Run the app:
+3. Set up environment variables
+
+Copy the `.env.example` file to `.env.local` and fill in your credentials:
+
+```bash
+cp .env.example .env.local
+```
+
+4. Run the development server
 
 ```bash
 npm run dev
 ```
 
-3.  View the app on http://localhost:3000
+5. Open [http://localhost:3000](http://localhost:3000) in your browser
 
-### Follow the workshop
+## Database Setup
 
-View the full workshop on [X](https://x.com/mckaywrigley/status/1891544731496206365) and [YouTube](https://www.youtube.com/watch?v=Y4n_p9w8pGY).
+This boilerplate uses Drizzle ORM with PostgreSQL. To set up your database:
 
-Or sign up for [Takeoff](https://www.jointakeoff.com/) to get access to the full workshop in course form.
+1. Create a PostgreSQL database
+2. Update your database connection string in `.env.local`
+3. Generate and run migrations:
+
+```bash
+npm run db:generate
+npm run db:migrate
+```
+
+## Deployment
+
+This application can be easily deployed to Vercel:
+
+[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https%3A%2F%2Fgithub.com%2Fyourusername%2Fsaas-boilerplate)
+
+## License
+
+This project is licensed under the MIT License - see the LICENSE file for details.

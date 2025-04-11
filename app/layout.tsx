@@ -17,8 +17,8 @@ import "./globals.css"
 const inter = Inter({ subsets: ["latin"] })
 
 export const metadata: Metadata = {
-  title: "Receipt AI",
-  description: "A full-stack web app template."
+  title: "SAAS Boilerplate",
+  description: "A full-stack SAAS web application template."
 }
 
 // REMOVED: async keyword
