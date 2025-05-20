@@ -17,7 +17,7 @@ import "./globals.css"
 const inter = Inter({ subsets: ["latin"] })
 
 export const metadata: Metadata = {
-  title: "SAAS Boilerplate",
+  title: "SaaS Template",
   description: "A full-stack SAAS web application template."
 }
 

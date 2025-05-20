@@ -1,6 +1,7 @@
-# SAAS Boilerplate
+# SAAS Template
 
-A modern, full-stack SAAS web application template to kickstart your next project.
+A modern, full-stack SAAS web application template to kickstart your next project.\
+This repo is a fork of [Mckay's SaaS boilerplate](https://github.com/mckaywrigley/o1-pro-template-system) with some minor fixes.
 
 ## Tech Stack
 
@@ -36,8 +37,8 @@ You will need accounts for the following services:
 1. Clone this repository
 
 ```bash
-git clone https://github.com/yourusername/saas-boilerplate.git
-cd saas-boilerplate
+git clone https://github.com/gziz/saas-template
+cd saas-template
 ```
 
 2. Install dependencies

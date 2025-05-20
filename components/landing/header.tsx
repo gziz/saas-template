@@ -13,7 +13,7 @@ import {
   UserButton
 } from "@clerk/nextjs"
 import { motion } from "framer-motion"
-import { Menu, Receipt, X } from "lucide-react"
+import { Menu, X } from "lucide-react"
 import Link from "next/link"
 import { useEffect, useState } from "react"
 
@@ -59,9 +59,8 @@ export default function Header() {
           whileHover={{ scale: 1.05 }}
           whileTap={{ scale: 0.95 }}
         >
-          <Receipt className="size-6" />
           <Link href="/" className="text-xl font-bold">
-            Receipt AI
+            SaaS Template
           </Link>
         </motion.div>
 

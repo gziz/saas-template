@@ -20,7 +20,7 @@ export const HeroSection = () => {
         transition={{ duration: 0.6, ease: "easeOut" }}
         className="flex items-center justify-center"
       >
-        <Link href="https://github.com/mckaywrigley/o1-pro-template-system">
+        <Link href="https://github.com/gziz/saas-template">
           <AnimatedGradientText>
             🚀 <hr className="mx-2 h-4 w-px shrink-0 bg-gray-300" />
             <span
@@ -47,7 +47,7 @@ export const HeroSection = () => {
           transition={{ duration: 0.6, delay: 0.4, ease: "easeOut" }}
           className="text-balance text-6xl font-bold"
         >
-          SAAS Boilerplate
+          SaaS Template
         </motion.div>
 
         <motion.div
@@ -64,7 +64,7 @@ export const HeroSection = () => {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.8, ease: "easeOut" }}
         >
-          <Link href="https://github.com/mckaywrigley/o1-pro-template-system">
+          <Link href="https://github.com/gziz/saas-template">
             <Button className="bg-blue-500 text-lg hover:bg-blue-600">
               <Rocket className="mr-2 size-5" />
               Get Started &rarr;
