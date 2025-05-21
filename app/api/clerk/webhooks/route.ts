@@ -10,7 +10,6 @@ import { Webhook } from "svix"
 export async function POST(req: Request) {
   // Get the request body
   const payload = await req.json()
-  console.log("payload", payload)
 
   // Get the headers
   const headersList = await headers()
@@ -50,7 +49,6 @@ export async function POST(req: Request) {
 
   // Get the event type
   const eventType = evt.type
-  console.log("eventType", eventType)
   // Process the event based on type
   if (eventType === "user.created" || eventType === "user.updated") {
     // Get the user data from the payload
